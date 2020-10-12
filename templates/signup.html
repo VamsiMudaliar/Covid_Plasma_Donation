@@ -1,0 +1,41 @@
+
+{%include 'header.html' %}
+
+
+<body>
+
+	<div class="d-flex flex-row justify-content-center animate__animated animate__fadeIn p-3">
+		<div class="col-lg-6 p-1	"  style="background-color: #f5f5f5">
+			<h2 class="text-center p-2 animate__animated animate__fadeInUp" ><strong>Donor Signup</strong></h2>
+
+			{% with messages= get_flashed_messages() %}
+			{% if messages %}
+			{% for msg in messages %}
+			<div class="alert alert-success p-2">
+				<p><strong>{{msg}}</strong></p>
+			</div><br>
+			{% endfor %}
+			{% endif %}
+
+			{% endwith %}
+			<form class="form-group" method="POST" action="/signupUser">
+
+				<input type="name" class="form-control" name="name" autocomplete="off" placeholder="Enter your name">
+				<br>
+				<input type="email" class="form-control" name="email" autocomplete="off" placeholder="Enter your Email">
+				<br>
+				<input type="password" class="form-control" name="password" autocomplete="off" placeholder="Enter your Password">
+				<br>
+				<input type="text" class="form-control" name="phone" autocomplete="off" placeholder="Enter your Mobile Number"><br>
+				<div class="text-center">
+					<input type="submit" class="btn btn-block btn-primary" value="Register">
+				</div><br>
+			</form>
+		</div>
+	</div>
+
+
+
+
+
+</body>
